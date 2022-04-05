@@ -39,7 +39,17 @@ Note, that we do not provide the images of the CLEVR dataset, which can be downl
 
 As stated above, the two python pickle files (`train_images_ids_v0.7.10-recut.pkl` and `dev_images_ids_v0.7.10-recut.pkl`) contain the image indices of all CLEVR-X train explanations and all CLEVR-X validation explanations.
 
-To separate these subsets, one must iterate through the samples in `CLEVR_train_explanations_v0.7.10.json` and check whether the `image_index` of each sample is either in the list contained in  `train_images_ids_v0.7.10-recut.pkl` or in the list contained in `dev_images_ids_v0.7.10-recut.pkl`.
+#### Train
+
+To obtain the train samples, iterate through the samples in `CLEVR_train_explanations_v0.7.10.json` and use those samples, whose `image_index` is in the list contained in `train_images_ids_v0.7.10-recut.pkl`.
+
+#### Validation
+
+To obtain the validation samples, iterate through the samples in `CLEVR_train_explanations_v0.7.10.json` and use those samples, whose `image_index` is in the list contained in `dev_images_ids_v0.7.10-recut.pkl`.
+
+#### Test
+
+All samples from the CLEVR _validation_ subset (`CLEVR_val_explanations_v0.7.10.json`) are used for the CLEVR-X **test** subset.
 
 ## CLEVR-X Dataset Generation
 
