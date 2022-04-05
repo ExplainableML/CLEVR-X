@@ -1,0 +1,37 @@
+.DS_Store
+__pycache__/
+*.swp
+*.pyc
+output/
+
+.mypy_cache/
+.mutmut-cache
+.coverage
+.pytest_cache
+.hypothesis
+question_generation/images/
+
+# These files are needed/generated, but to big to commit
+CLEVR_val*_scenes*.json
+CLEVR_train*_scenes*.json
+CLEVR_val*_questions*.json
+CLEVR_train*_questions*.json
+CLEVR_test*_questions*.json
+CLEVR_val*_explanations*.json
+CLEVR_train*_explanations*.json
+CLEVR_v1.0.zip
+
+CLEVR_train_*_v*.txt
+
+*.pkl
+*.hdf5
+*.7z
+xlen*.png
+
+# ignore outputs from the CLEVR-X user study
+user_study/results/*.png
+user_study/results/*.pdf
+
+# local project files
+.vscode/ltex*
+.vscode/.ropeproject/*

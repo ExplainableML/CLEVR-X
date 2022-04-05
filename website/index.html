@@ -1,0 +1,250 @@
+---
+title: CLEVR-X
+description: A Visual Reasoning Dataset for Natural Language Explanations
+---
+<section class="hero">
+	<div class="text-container">
+		<h1 class="editable">CLEVR-X</h1>
+		<p class="subtext editable">A Visual Reasoning Dataset for Natural Language Explanations</p>
+		<!-- TODO: those should be links -->
+		<div class="subboldtext editable author">
+			<a href="https://www.eml-unitue.de/people/leonard-salewski" style="color: white">Leonard Salewski<sup
+					style="color:#fff;">1</sup></a>,&emsp; <a
+				href="https://www.eml-unitue.de/people/almut-sophia-koepke" style="color: white">A. Sophia Koepke<sup
+					style="color:#fff;">1</sup></a>,&emsp; <a
+				href="https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/computergrafik/lehrstuhl/mitarbeiter/prof-dr-ing-hendrik-lensch/"
+				style="color: white">Hendrik Lensch<sup style="color:#fff;">1</sup></a>,&emsp; <a
+				href="https://www.eml-unitue.de/people/zeynep-akata" style="color: white">Zeynep Akata<sup
+					style="color:#fff;">1,2,3</sup></a>
+		</div>
+
+		<div class="subsubtext editable author">
+			<sup>1</sup>University of T&uumlbingen &emsp;&emsp;
+			<sup>2</sup>MPI for Informatics &emsp;&emsp;
+			<sup>3</sup>MPI for Intelligent Systems
+		</div>
+
+		<div class="subittext editable author">In: <a href="https://human-centered.ai/springer-lnai-xxai/"
+				style="color: white">Springer LNAI 13200 xxAI – Beyond explainable Artificial Intelligence</a></div>
+		<div class="">
+			<!-- hacky solution for fixing the buttons. Probably should also be a flex -->
+			<!-- Doesnt work on very small resolutions but good enough -->
+			<div class="concated-button cta">
+				<span class="cta button alt"><a href="{{ site.baseurl }}">Paper (ArXiv)</a></span>
+				<span class="cta button alt"><a
+						href="https://www.dropbox.com/sh/qe1wfahldk3pd7l/AADnsGTUInU5-eLCjyor0Iapa?dl=0">Download
+						dataset</a></span>
+				<span class="cta button alt"><a href="https://github.com/ExplainableML/CLEVR-X">Code (GitHub)</a></span>
+			</div>
+			<div class="stacked-button">
+				<div class="cta button alt"><a href="{{ site.baseurl }}/contact/">Paper (ArXiv)</a></div>
+				<div class="cta button alt"><a
+						href="https://www.dropbox.com/sh/qe1wfahldk3pd7l/AADnsGTUInU5-eLCjyor0Iapa?dl=0">Download
+						dataset</a></div>
+				<div class="cta button alt"><a href="https://github.com/ExplainableML/CLEVR-X">Code (GitHub)</a></div>
+			</div>
+		</div>
+
+	</div>
+</section>
+
+<div class="content">
+	<!-- Abstract and Example -->
+	<section class="white-background">
+		<div class="container flex">
+			<div class="text editable" style="flex:2">
+				<h2>Abstract</h2>
+				<p class="abstract-text">
+					To obtain detailed insights into the process of generating natural language explanations for VQA, we
+					introduce the large-scale CLEVR-X dataset that extends the CLEVR dataset with natural language
+					explanations.
+					<br>
+					For each image-question pair in the CLEVR dataset, CLEVR-X contains multiple
+					structured textual explanations which are derived from the original scene graphs. By construction,
+					the CLEVR-X explanations are correct and describe the reasoning and visual information that is
+					necessary to answer a given question.
+					<br>
+					We conducted a user study to confirm that the ground-truth
+					explanations in our proposed dataset are indeed complete and relevant.
+					We present baseline results for generating natural language explanations in the context of VQA using
+					two state-of-the-art frameworks on the CLEVR-X dataset. Furthermore, we provide a detailed analysis
+					of the explanation generation quality for different question and answer types.
+					Additionally, we study the influence of using different numbers of ground-truth explanations on the
+					convergence of natural language generation (NLG) metrics.
+				</p>
+			</div>
+			<div class="image">
+				<img src="./images/CLEVR_val_005182.png" alt="CLEVR-X example." class="editable" />
+				<div>
+					<strong>
+						Question:
+					</strong>
+					There is a purple metallic ball; what number of cyan objects are right of it?
+				</div>
+				<div>
+					<strong>
+						Answer:
+					</strong>
+					1
+				</div>
+				<div>
+					<strong>
+						Explanation:
+					</strong>
+					There is a cyan cylinder which is on the right side of the purple metallic ball.
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<section>
+		<!-- Dummy section, such that Citation is cut of on the left instead of on the right -->
+	</section>
+	<section class="gray-background">
+		<div class="container flex">
+			<div class="text editable" style="flex:5">
+				<h2>Key Properties of CLEVR-X</h2>
+			</div>
+		</div>
+		<div class="container flex">
+			<div class="text editable" style=flex:3>
+				The CLEVR-X dataset provides 10 semantically identical (but grammatically varied) textual explanations
+				for each CLEVR sample. By design, all explanations in CLEVR-X are:<br>
+				<ul>
+					<li>correct,
+					</li>
+					<li>and complete (i.e. all relevant objects are described).
+					</li>
+				</ul>
+				<br>
+				More details are provided in our paper.
+			</div>
+		</div>
+	</section>
+
+	<!-- Download -->
+	<section>
+		<!-- Dummy section, such that Citation is cut of on the left instead of on the right -->
+	</section>
+	<section class="white-background">
+		<div class="container flex">
+			<div class="text editable" style="flex:5">
+				<h2>CLEVR-X Dataset Download</h2>
+			</div>
+		</div>
+		<div class="container flex">
+			<div class="text editable" style="flex:5">
+				The CLEVR-X dataset consists of: <br>
+				<ul>
+					<li>A training set of <strong>2,401,275</strong> natural language explanations for 70,000 images.
+					</li>
+					<li>A validation set of <strong>599,711</strong> natural language explanations for 14,000 images.
+					</li>
+					<li>A test set of <strong>644,151</strong> natural language explanations for 15,000 images.</li>
+				</ul>
+			</div>
+			<div class="image" style="flex:3">
+				<center>
+					<div class="cta button">
+						<a href="https://www.dropbox.com/sh/qe1wfahldk3pd7l/AADnsGTUInU5-eLCjyor0Iapa?dl=0">CLEVR-X
+							dataset</a>
+					</div>
+					<div class="cta button">
+						<a href="https://github.com/ExplainableML/CLEVR-X">Generation code</a>
+					</div>
+				</center>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+	<!-- Citation -->
+	<section>
+		<!-- Dummy section, such that Citation is cut of on the left instead of on the right -->
+	</section>
+
+	<section class="testimonial">
+		<div class="container flex">
+			<div class="text editable">
+
+				<h2>Citation</h2>
+				If you use the CLEVR-X dataset, please consider citing:
+
+				<pre>
+@inproceedings{salewski2022clevrx,
+	title     = {CLEVR-X: A Visual Reasoning Dataset for Natural Language Explanations},
+	author    = {Leonard Salewski and A. Sophia Koepke and Hendrik P. A. Lensch and Zeynep Akata},
+	booktitle = {xxAI - Beyond explainable Artificial Intelligence},
+	pages     = {85--104},
+	year      = {2022},
+	publisher = {Springer},
+}					</pre>
+				<!-- 
+			<div class="testimonial-block">
+				<div class="square-image"><img src="https://www.eml-unitue.de/team/leonard-salewski.jpg"
+						alt="Image of Leonard Salewski" class="editable"></div>
+				<blockquote>
+					<p class="editable">CLEVR-X is a large scale dataset of natural language explanations designed to
+						help to understand strengths and weaknesses of natural language explanation models.</p>
+					<p class="editable author">Leonard Salewski</p>
+				</blockquote>
+			
+		</div> -->
+			</div>
+		</div>
+
+	</section>
+
+
+	<!-- Acknowledgements -->
+	<section class="white-background">
+		<div class="container flex">
+			<div class="text editable" style="text-align: justify;">
+				<h2>Acknowledgements</h2>
+				The authors thank the Amazon Mechanical Turk workers that participated in the user study. This work was
+				supported by the DFG – EXC number 2064/1 – project number 390727645, by the DFG: SFB 1233, Robust
+				Vision: Inference Principles and Neural Mechanisms - project number: 276693517, by the ERC (853489 -
+				DEXIM), and by the BMBF (FKZ: 01IS18039A). The authors thank the International Max Planck Research
+				School for Intelligent Systems (IMPRS-IS) for supporting L. Salewski.
+			</div>
+		</div>
+		<!-- uni tübingen, imprs-is, EML, CG -->
+		<div class="container flex">
+			<div class="image">
+				<center>
+					<div class="small-logo" style="overflow:hidden;">
+						<!-- eml_logo_website_no_bg.png -->
+						<a href="https://www.eml-unitue.de"><img src="images/twitter_main_bg_removed_wide.png"
+								alt="EML Logo" /></a>
+					</div>
+				</center>
+			</div>
+			<div class="image">
+				<center>
+					<div class="small-logo" style="overflow:hidden;">
+						<img src="images/uni_tuebingen_logo.gif" alt="Uni Tübingen Logo" />
+					</div>
+				</center>
+			</div>
+
+			<div class="image">
+				<center>
+					<div class="small-logo" style="overflow:hidden;"><img
+							src="https://imprs.is.mpg.de/uploads/ckeditor/attachments/622/imprs-is-logo.png"
+							alt="IMPRS-IS Logo" />
+					</div>
+				</center>
+			</div>
+		</div>
+	</section>
+
+
+	<!-- <section class="bottom-cta">
+		<div class="button alt"><a href="#">Download CLEVR-X</a></div>
+	</section> -->
+</div>
