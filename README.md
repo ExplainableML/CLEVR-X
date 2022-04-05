@@ -21,18 +21,29 @@ Below is an example from the CLEVR dataset extended with CLEVR-X's natural langu
 This repository contains instructions for:
 
 1. [CLEVR-X Dataset Download](#CLEVR-X-Dataset-Download)
-2. [Citation](#Citation)
+2. [CLEVR-X Dataset Generation](#CLEVR-X-Dataset-Generation)
+3. [Citation](#Citation)
 
 ## CLEVR-X Dataset Download
 
 The generated CLEVR-X dataset is available here: [CLEVR-X dataset](https://www.dropbox.com/sh/qe1wfahldk3pd7l/AADnsGTUInU5-eLCjyor0Iapa?dl=0) (~1.21 GB).
-It is made up of two json files, which follow the general layout of the original CLEVR json files.
 
-### Obtaining the CLEVR-X Split
+The download includes two JSON files, which contain the explanations for all CLEVR train and CLEVR validation questions (`CLEVR_train_explanations_v0.7.10.json` and  `CLEVR_val_explanations_v0.7.10.json` respectively).
+The general layout of the JSON files follows the original CLEVR JSON files. The `info` key contains general information, whereas the `questions` key contains the dataset itself. The latter is a list of dictionaries, where each dictionary is one sample of the CLEVR-X dataset.
 
-Furthermore, there are two python pickle files (`train_images_ids_v0.7.10-recut.pkl` and `dev_images_ids_v0.7.10-recut.pkl`), which contain the image ids of all CLEVR-X train explanations and all CLEVR-X val explanations (both to be loaded from `CLEVR_train_explanations_v0.7.10.json`).
+Furthermore, we provide two python pickle files at the same link. Those contain a list of the image indices of the CLEVR-X train and CLEVR-X validation subsets (which are both part of the CLEVR train subset.)
 
-Each entry in `CLEVR_train_explanations_v0.7.10.json` has a field `image_index`, which must be part of `train_images_ids_v0.7.10-recut.pkl` for the CLEVR-X train split and which must be part of `dev_images_ids_v0.7.10-recut.pkl` for the CLEVR-X validation split.
+Note, that we do not provide the images of the CLEVR dataset, which can be downloaded from the original [CLEVR project page](https://cs.stanford.edu/people/jcjohns/clevr/).
+
+### Obtaining the CLEVR-X Splits
+
+As stated above, the two python pickle files (`train_images_ids_v0.7.10-recut.pkl` and `dev_images_ids_v0.7.10-recut.pkl`) contain the image indices of all CLEVR-X train explanations and all CLEVR-X validation explanations.
+
+To separate these subsets, one must iterate through the samples in `CLEVR_train_explanations_v0.7.10.json` and check whether the `image_index` of each sample is either in the list contained in  `train_images_ids_v0.7.10-recut.pkl` or in the list contained in `dev_images_ids_v0.7.10-recut.pkl`.
+
+## CLEVR-X Dataset Generation
+
+Coming soon.
 
 ## Citation
 
