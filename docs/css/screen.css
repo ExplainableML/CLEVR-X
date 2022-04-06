@@ -79,7 +79,7 @@ li:not(:first-of-type) { margin-top: 1em; }
 
 .grid-item { box-sizing: border-box; }
 
-code { border-radius: 8px; font-family: "Courier New", monospace; width: 95%; font-size: 0.83em; background: #dbdbd9; padding: 10px; }
+code { border-radius: 8px; font-family: "Courier New", monospace; width: 90%; font-size: 0.83em; background: #dbdbd9; padding: 10px; }
 
 pre { -webkit-overflow-scrolling: touch; font-family: "Courier New", monospace; font-size: 0.9em; margin: 0 0 0 30px; }
 
