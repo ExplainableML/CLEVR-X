@@ -17,7 +17,7 @@ h1 strong, h2 strong { font-weight: 700; }
 
 h1 { font-weight: 300; font-size: 2.3em; margin: 0; }
 
-h2 { font-weight: 300; font-size: 2.2em; margin: 0 0 30px 0; }
+h2 { font-weight: 300; font-size: 1.8em; margin: 0 0 30px 0; }
 
 h3 { margin: 20px 0 10px 0; }
 
@@ -85,6 +85,18 @@ pre { -webkit-overflow-scrolling: touch; font-family: "Courier New", monospace; 
 
 pre code { display: block; line-height: 1.75; overflow-x: scroll; }
 
+.flex-container { display: flex; flex-flow: row wrap; padding: 10px 0; row-gap: 5px; justify-content: space-around; margin: 0 -10px; }
+
+.flex-container-item { margin: 0 10px; }
+
+.flex-container-buttons { display: flex; flex-flow: row wrap; padding: 30px 0; row-gap: 25px; justify-content: space-around; }
+
+/* Medium screens */
+@media all and (max-width: 800px) { .flex-container-buttons { /* When on medium sized screens, we center it by evenly distributing empty space around items */ flex-direction: column; } }
+
+/* Small screens */
+@media all and (max-width: 500px) { .flex-container-buttons { /* On small screens, we are no longer using row direction but column */ flex-direction: column; } }
+
 .container, .text-container { margin: 0 auto; position: relative; padding: 0 30px 0; }
 
 .text-container { max-width: 750px; }
@@ -115,11 +127,11 @@ section + section { padding-top: 0; }
 
 .subtext { margin-top: 25px; text-align: center; }
 
-.subboldtext { margin-top: 35px; text-align: center; font-weight: 500; }
+.subboldtext { text-align: center; font-weight: 500; }
 
 .subsubtext { margin-top: 35px; text-align: center; }
 
-.subittext { margin-top: 30px; text-align: center; font-style: italic; }
+.subittext { margin-top: 20px; margin-bottom: 20px; text-align: center; font-style: italic; }
 
 .cta { margin: 40px 0; padding: 10px; }
 
