@@ -1,11 +1,11 @@
 # CLEVR-X: A Visual Reasoning Dataset for Natural Language Explanations
 
 By <a href='https://www.eml-unitue.de/people/leonard-salewski'>Leonard Salewski</a>, <a href='https://www.eml-unitue.de/people/almut-sophia-koepke'>A. Sophia Koepke</a>, <a href='https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/computergrafik/lehrstuhl/mitarbeiter/prof-dr-ing-hendrik-lensch/'>Hendrik Lensch</a> and <a href='https://www.eml-unitue.de/people/zeynep-akata'>Zeynep Akata</a>.
-To be published in [Springer LNAI xxAI](https://human-centered.ai/springer-lnai-xxai/). A preprint is available on [arXiv](https://arxiv.org/abs/2204.02380).
+Published in [Springer LNAI xxAI](https://human-centered.ai/springer-lnai-xxai/). A preprint is available on [arXiv](https://arxiv.org/abs/2204.02380).
 
 <!-- >📋 Optional: include a link to demos, blog posts and tutorials -->
 
-This repository is the official implementation of [CLEVR-X: A Visual Reasoning Dataset for Natural Language Explanations](todo). It contains code to generate the CLEVR-X dataset and a [PyTorch](https://pytorch.org/) dataset implementation.
+This repository is the official implementation of [CLEVR-X: A Visual Reasoning Dataset for Natural Language Explanations](https://explainableml.github.io/CLEVR-X/). It contains code to generate the CLEVR-X dataset and a [PyTorch](https://pytorch.org/) dataset implementation.
 
 Below is an example from the CLEVR dataset extended with CLEVR-X's natural language explanation:
 
