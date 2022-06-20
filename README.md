@@ -22,7 +22,9 @@ This repository contains instructions for:
 
 1. [CLEVR-X Dataset Download](#CLEVR-X-Dataset-Download)
 2. [CLEVR-X Dataset Generation](#CLEVR-X-Dataset-Generation)
-3. [Citation](#Citation)
+3. [Model Results](#Results)
+4. [Contribution and License](#Contributing)
+5. [Citation](#Citation)
 
 ## CLEVR-X Dataset Download
 
@@ -53,7 +55,101 @@ All samples from the CLEVR _validation_ subset (`CLEVR_val_explanations_v0.7.10.
 
 ## CLEVR-X Dataset Generation
 
-Coming soon.
+The following sections explain how to generate the CLEVR-X dataset.
+
+### Requirements
+
+The required libraries for generating the CLEVR-X dataset can be found in the environment.yaml file. To create an environment and to install the requirements use [conda](https://docs.conda.io/en/latest/):
+
+```setup
+conda env create --file environment.yaml
+```
+
+Activate it with:
+
+```setup
+conda activate clevr_explanations
+```
+
+### CLEVR Dataset Download
+
+As CLEVR-X uses the same questions and images as CLEVR, it is necessary to download the [CLEVR dataset](https://cs.stanford.edu/people/jcjohns/clevr/). Follow the instructions on the [CLEVR dataset website](https://cs.stanford.edu/people/jcjohns/clevr/) to download the original dataset (images, scene graphs and questions & answers).
+The extracted files should be located in a folder called `CLEVR_v1.0` also known as `$CLEVR_ROOT`.
+For further instructions and information about the original CLEVR code, it could also be helpful to refer to the [CLEVR GitHub repository](https://github.com/facebookresearch/clevr-dataset-gen).
+
+### Training Subset
+
+First change into the `question_generation` directory:
+
+```bash
+cd question_generation
+```
+
+To generate explanations for the CLEVR training subset run this command:
+
+```bash
+python generate_explanations.py \
+    --input_scene_file $CLEVR_ROOT/scenes/CLEVR_train_scenes.json \
+    --input_questions_file $CLEVR_ROOT/questions/CLEVR_train_questions.json \
+    --output_explanations_file $CLEVR_ROOT/questions/CLEVR_train_explanations_v0.7.13.json \
+    --seed "43" \
+    --metadata_file ./metadata.json
+```
+
+This generation takes about 6 hours on an Intel(R) Xeon(R) Gold 5220 CPU @ 2.20GHz.
+Note, setting the `--log_to_dataframe` flag to `true` may increase the generation time significantly, but allows dumping (parts of) the dataset as an HTML table.
+
+### Validation Subset
+
+First change into the `question_generation` directory:
+
+```bash
+cd question_generation
+```
+
+To generate explanations for the CLEVR validation subset run this command:
+
+```bash
+python generate_explanations.py \
+    --input_scene_file $CLEVR_ROOT/scenes/CLEVR_val_scenes.json \
+    --input_questions_file $CLEVR_ROOT/questions/CLEVR_val_questions.json \
+    --output_explanations_file $CLEVR_ROOT/questions/CLEVR_val_explanations_v0.7.13.json \
+    --seed "43" \
+    --metadata_file ./metadata.json
+```
+
+This generation takes less than 1 hour on an Intel(R) Xeon(R) Gold 5220 CPU @ 2.20GHz.
+Note, setting the `--log_to_dataframe` flag to `true` may increase the generation time significantly, but allows dumping (parts of) the dataset as an HTML table.
+
+Both commands use the `--input_scene_file`, `--input_questions_file` and the `--metadata_file` provided by the original [CLEVR](https://cs.stanford.edu/people/jcjohns/clevr/) dataset. You can use any name for the `--output_explanations_file` argument, but the dataloader expects it in the format `CLEVR_<split>_explanations_<version>.json`.
+
+### Splits
+
+Note, that the original CLEVR test set does not have publically accessible scene graphs and functional programs. Thus, we use the CLEVR validation set as the CLEVR-X test subset. The following code generates a **new** split of the CLEVR training set into the CLEVR-X training and validation subsets:
+
+```bash
+cd question_generation
+python dev_split.py --root $CLEVR_ROOT
+```
+
+As each image comes with ten questions, the split is performed alongside the images instead of individual dataset samples. The code stores the image indices of each split in two separate python pickle files (named `train_images_ids_v0.7.10-recut.pkl` and `dev_images_ids_v0.7.10-recut.pkl`). We have published our files alongside with the dataset download and recommend using those indices.
+
+## Results
+
+Different baselines and VQA-X models achieve the following performance on CLEVR-X:
+
+| Model name         |       Accuracy  | [BLEU](https://aclanthology.org/P02-1040/)           | [METEOR](https://aclanthology.org/W05-0909/)         | [ROUGE-L](https://aclanthology.org/W04-1013/)        | [CIDEr](https://openaccess.thecvf.com/content_cvpr_2015/papers/Vedantam_CIDEr_Consensus-Based_Image_2015_CVPR_paper.pdf)          |
+| ------------------ |---------------- | -------------- | -------------- | -------------- | -------------- |
+| Random Words       |       3.6%         |     0.0           | 8.4               |        11.4        |     5.9           |
+| Random Explanations|       3.6%         |     10.9           |   16.6             |     35.3           |      30.4          |
+| [PJ-X](https://openaccess.thecvf.com/content_cvpr_2018/papers/Park_Multimodal_Explanations_Justifying_CVPR_2018_paper.pdf)               |       80.3%         |      78.8          |        52.5        |      85.8          |       566.8         |
+| [FM](https://arxiv.org/abs/1809.02805)                 |       63.0%         |        87.4        |     58.9           |    93.4            |     639.8           |
+
+For more information on the baselines and models, check the respective publications and our CLEVR-X publication itself.
+
+## Contributing & License
+
+For information on the license please look into the `LICENSE` file.
 
 ## Citation
 
