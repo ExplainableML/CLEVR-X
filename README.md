@@ -1,7 +1,11 @@
+<div align="center">
+
 # CLEVR-X: A Visual Reasoning Dataset for Natural Language Explanations
 
+</div>
+
 By <a href='https://www.eml-unitue.de/people/leonard-salewski'>Leonard Salewski</a>, <a href='https://www.eml-unitue.de/people/almut-sophia-koepke'>A. Sophia Koepke</a>, <a href='https://uni-tuebingen.de/fakultaeten/mathematisch-naturwissenschaftliche-fakultaet/fachbereiche/informatik/lehrstuehle/computergrafik/lehrstuhl/mitarbeiter/prof-dr-ing-hendrik-lensch/'>Hendrik Lensch</a> and <a href='https://www.eml-unitue.de/people/zeynep-akata'>Zeynep Akata</a>.
-Published in [Springer LNAI xxAI](https://human-centered.ai/springer-lnai-xxai/). A preprint is available on [arXiv](https://arxiv.org/abs/2204.02380).
+Published in [Springer LNAI xxAI](https://human-centered.ai/springer-lnai-xxai/) and also presented at the [CVPR 2022 Workshop on Explainable AI for Computer Vision (XAI4CV)](https://xai4cv.github.io/workshop_cvpr22). A preprint is available on [arXiv](https://arxiv.org/abs/2204.02380).
 
 <!-- >📋 Optional: include a link to demos, blog posts and tutorials -->
 
@@ -165,3 +169,4 @@ If you use CLEVR-X in any of your works, please use the following bibtex entry t
     publisher = {Springer}
 }
 ```
+You can also find our work on [Google Scholar](https://scholar.google.de/citations?view_op=view_citation&hl=de&user=jJz3mXcAAAAJ&citation_for_view=jJz3mXcAAAAJ:d1gkVwhDpl0C) and [Semantic Scholar](https://www.semanticscholar.org/paper/CLEVR-X%3A-A-Visual-Reasoning-Dataset-for-Natural-Salewski-Koepke/22ef74d60e8dabf3167b8288ffb0a6faa8797736).
